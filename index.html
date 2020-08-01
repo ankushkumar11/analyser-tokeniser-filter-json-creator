@@ -10,9 +10,30 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <script>
+    function conveter() {
+      var obj = { tokenizer: "classic", filter: ["classic"], text: "Hello" };
+        x=document.getElementById("tokenizer").value
+        if (x != "") {
+          obj.tokenizer=x
+        }
+      
+        y=document.getElementById("filter").value
+        if (y != "") {
+          obj.filter=[y]
+        }
+      
+        z=document.getElementById("text").value
+        if (z != "") {
+          obj.filter=z
+        }
+        var myJSON = JSON.stringify(obj);
+        document.getElementById("demo").innerHTML = myJSON 
+    }
+  </script>
 
 <div class="container mt-3">
-  <h3>Input Groups</h3>
+  <h3>analyser-tokeniser-filter-json-creator</h3>
 
   
   <form action="/action_page.php">
@@ -28,10 +49,32 @@
         </select>
       </div>
     </div>
+    
+     <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">filter</span>
+      </div>
+      <div class="input-group-prepend">
+        <select name="filter" id="filter">
+          <option value="classic">classic</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text">text</span>
+      </div>
+      <div class="input-group-prepend">
+        <input type="text" id="text" name="text">
+      </div>
+    </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" onclick="conveter()" class="btn btn-primary">Submit</button>
   </form>
 </div>
+  
+  <p id="demo"></p>
 
 </body>
 </html>
