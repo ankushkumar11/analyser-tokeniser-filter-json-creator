@@ -20,12 +20,12 @@
       
         y=document.getElementById("filter").value
         if (y != "") {
-          obj.filter[0]=y
+          obj.filter=y
         }
       
         z=document.getElementById("text").value
         if (z != "") {
-          obj.filter=z
+          obj.text=z
         }
         var myJSON = JSON.stringify(obj);
         document.getElementById("demo").innerHTML = myJSON 
