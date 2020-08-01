@@ -27,8 +27,8 @@
         if (z != "") {
           obj.text=z
         }
-        var myJSON = JSON.stringify(obj);
-        document.getElementById("demo").innerHTML = myJSON 
+        var myJSON = JSON.stringify(obj, undefined, 2);
+        document.getElementById("demo").textContent = myJSON 
     }
   </script>
 
@@ -74,7 +74,7 @@
   
   <button onclick="conveter()" class="btn btn-primary">Submit</button>
   
-  <p id="demo"></p>
+  <pre id="demo"></pre>
 
 </body>
 </html>
